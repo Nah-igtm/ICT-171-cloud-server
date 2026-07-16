@@ -1,4 +1,5 @@
-Student name:Muhammad Nahshal\nStudent number:35512854
+Student name:Muhammad Nahshal
+Student number:35512854
 
 
 # ICT-171-cloud-server
