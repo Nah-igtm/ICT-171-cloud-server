@@ -1,8 +1,7 @@
 # ICT171 Cloud Server Project: Personal Portfolio Website
 
 * **Student Name:** Muhammad Nahshal  
-* **Student ID:** 35512854  
-* **Unit:** ICT171 Introduction to Server Environments and Architectures  
+* **Student ID:** 35512854                                                                                                                                             ski
 * **Live Site IP:** `20.248.209.74`  
 * **Live Domain:** [Your Domain Name Link Here]  
 * **Video Explainer:** [Your Video Link Here]  
