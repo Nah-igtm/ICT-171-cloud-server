@@ -100,3 +100,17 @@ Once deployment is complete, navigate to your Virtual Machine resource page to r
 ```bash
 ssh -i "yourkeyname.pem" your_username@your_azure_vm_ip_address
 ```
+
+** You should now have SSH access to your cloud machine.
+
+## Install nginx
+**Before you install anything, it is often a good idea to update them with
+```bash
+sudo apt update
+```
+
+**Install the Nginx Web Server using:
+```bash
+sudo apt install nginx-full
+```
+**Test by visiting your new webserver. You should be able to type the your cloud virtual machine's IP into your web browser.
