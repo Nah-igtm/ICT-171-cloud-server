@@ -58,7 +58,7 @@ Start by creating a virtual machine , you are free to choose any but here w will
  * **Image**  :**Ubuntu Server 24.04 LTS - x64 Gen2** 
  * **Size**  :Click see all sizes and choose depending on the budget relative to the computational power needed for you choose, b-series is highly recommended **B1s** (1 vCPU, 1 GiB RAM) or **B2s** (newer version of B-Series), for a static website portfolio you can choose from the b1 series, which is 1cpu and 1 gb of ram.
 
-> 💡 *Note: If B-Series sizes are unavailable, select "See all sizes" or switch the target region.*
+>  *Note: If B-Series sizes are unavailable, select "See all sizes" or switch the target region.*
 
 ---
 
@@ -177,6 +177,11 @@ Execute the following instruction on the command line on the machine to ensure t
 ```bash
 sudo ln -s /snap/bin/certbot /usr/local/bin/certbot
 ```
+Run this command to get a certificate and have Certbot edit your nginx configuration automatically to serve it, turning on HTTPS access in a single step.
+```bash
+sudo certbot --nginx
+```
+To confirm that your site is set up properly, visit https://yourwebsite.com/ in your browser and look for the lock icon in the URL bar.
 
 ## Administrative Automation & Maintenance Script
 
@@ -263,8 +268,3 @@ To verify the script and automated cron scheduling output, run the following dia
 ### 📷 Verified Execution Output
 ![Backup Script Output Proof](images/backup-script-output.png)
 *Figure: Terminal output demonstrating successful manual and automated daily 2:00 AM execution logs.*
-Run this command to get a certificate and have Certbot edit your nginx configuration automatically to serve it, turning on HTTPS access in a single step.
-```bash
-sudo certbot --nginx
-```
-To confirm that your site is set up properly, visit https://yourwebsite.com/ in your browser and look for the lock icon in the URL bar.
