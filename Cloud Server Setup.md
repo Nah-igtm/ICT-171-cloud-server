@@ -156,9 +156,9 @@ To route web traffic from `domain name` directly to the Azure static public IP.Y
   ```bash
   nslookup mn-cybr.online
   ```
-It should shnow the domain name and the IP address. 
+It should show the domain name and the IP address. 
 
-### Install Let's Encrypt SSL/TLS Certificates
+# Install Let's Encrypt SSL/TLS Certificates
 Now lets install SSL
 ssh into the server 
 
