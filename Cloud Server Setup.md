@@ -159,4 +159,29 @@ To route web traffic from `domain name` directly to the Azure static public IP.Y
   ```bash
   nslookup mn-cybr.online
   ```
-It should show the domain name and the IP address. 
+It should shnow the domain name and the IP address. 
+
+### Install Let's Encrypt SSL/TLS Certificates
+Now lets install SSL
+ssh into the server 
+
+## Install snapd
+Latest ubuntu versions usually have snapd but just to sure 
+Type these commands 
+```bash
+sudo apt update
+sudo apt install snapd
+```
+Then Run this command on the command line to install Certbot.
+```bash
+sudo snap install --classic certbot
+```
+Execute the following instruction on the command line on the machine to ensure that the certbot command can be run.
+```bash
+sudo ln -s /snap/bin/certbot /usr/local/bin/certbot
+```
+Run this command to get a certificate and have Certbot edit your nginx configuration automatically to serve it, turning on HTTPS access in a single step.
+```bash
+sudo certbot --nginx
+```
+To confirm that your site is set up properly, visit https://yourwebsite.com/ in your browser and look for the lock icon in the URL bar.
