@@ -148,7 +148,7 @@ To route web traffic from `domain name` directly to the Azure static public IP.Y
 
 | Record Type | Host | Answer / Target Value | TTL | Purpose |
 | :--- | :--- | :--- | :--- | :--- |
-| **A Record** | *(blank)* | `your server IP address` | `600` | Maps root domain directly to the Azure server IP. |
+| **A - Address record** | *(blank)* | `your server IP address` | `600` | Maps root domain directly to the Azure server IP. |
 | **CNAME** | `www` | `domain name` | `600` | Redirects `www` subdomain traffic to the root domain. |
 
 ---
