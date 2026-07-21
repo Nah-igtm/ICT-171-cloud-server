@@ -78,7 +78,7 @@ This section details the step-by-step process of provisioning a cloud Virtual Ma
  * **Availability Zone** :Leave as Default 
  * **VM Architecture**  :Leave as Default (`x64`) 
  * **Image**  :**Ubuntu Server 24.04 LTS - x64 Gen2** 
- * **Size**  :**B1s** (1 vCPU, 1 GiB RAM) or **B2s** (Budget-friendly B-Series) for a static website portfolio you can choose from the b1 series, which has 1cpu and 1 gb of ram.
+ * **Size**  :Click see all sizes and choose depending on the budget relative to the computational power needed for you, **B1s** (1 vCPU, 1 GiB RAM) or **B2s** (Budget-friendly B-Series) for a static website portfolio you can choose from the b1 series, which is 1cpu and 1 gb of ram.
 
 > 💡 *Note: If B-Series sizes are unavailable, select "See all sizes" or switch the target region.*
 
