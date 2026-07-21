@@ -120,8 +120,5 @@ Once deployment is complete, navigate to your Virtual Machine resource page to r
 4. Navigate to the folder containing your downloaded `.pem` key file and execute the SSH command:
 
 ```bash
-# Adjust file permissions (macOS/Linux only):
-chmod 400 "yourkeyname.pem"
-
-# Connect to the remote Azure VM:
-ssh -i "yourkeyname.pem" azureuser@<YOUR_AZURE_VM_IP_ADDRESS>
+ssh -i "yourkeyname.pem" your_username@your_azure_vm_ip_address
+```
