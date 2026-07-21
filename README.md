@@ -14,7 +14,7 @@ This repository contains the comprehensive technical documentation for deploying
 The site is hosted on a right-sized **Microsoft Azure B1s Virtual Machine** running **Ubuntu 24.04 LTS**, utilizing **Nginx** as the web server, and secured with manually configured **SSL/TLS certificates** via Let's Encrypt. This repository serves as a step-by-step replication guide to completely rebuild this server environment from scratch[cite: 1].
 
 
-##Development Timeline
+## Development Timeline
 The project was developed iteratively over 4 weeks:
 
 Week 1: Initial cloud infrastructure setup, Azure B1s virtual machine provisioned, and Network Security Group (NSG) firewall rules configured.
@@ -25,7 +25,7 @@ Week 3: Acquired mn-cybr.online domain via Porkbun, configured DNS A-records, an
 
 Week 4: Engineered custom Bash backup script (backup_portfolio.sh), scheduled daily automated execution via cron, and finalized documentation.
 
-##Features
+## Features
 Cloud Infrastructure: Deployed on an Azure Ubuntu 24.04 LTS IaaS Virtual Machine.
 
 Secure Web Server: Configured Nginx web server delivering high performance and low resource overhead.
@@ -36,7 +36,7 @@ Custom Domain Routing: Porkbun DNS resolution mapped directly to the static publ
 
 Automated Maintenance: Custom Bash backup script (backup_portfolio.sh) running daily at 2:00 AM via system cron with dynamic logging and a 7-day retention cleanup.
 
-##Tools Used
+## Tools Used
 Microsoft Azure VM (Ubuntu): Cloud compute provider (IaaS).
 
 Nginx: Web server software.
