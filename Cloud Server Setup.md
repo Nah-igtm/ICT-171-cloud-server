@@ -177,6 +177,8 @@ Execute the following instruction on the command line on the machine to ensure t
 ```bash
 sudo ln -s /snap/bin/certbot /usr/local/bin/certbot
 ```
+
+#
 Run this command to get a certificate and have Certbot edit your nginx configuration automatically to serve it, turning on HTTPS access in a single step.
 ```bash
 sudo certbot --nginx
