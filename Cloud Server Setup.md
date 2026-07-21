@@ -71,14 +71,14 @@ This section details the step-by-step process of provisioning a cloud Virtual Ma
 ## 2. Configuring VM Basics & Instance Details
 
 
- * **Subscription**  Choose Azure for Students 
- * **Resource Group** Create new $\rightarrow$ Name it appropriately (e.g., `rg-portfolio-project`) 
- * **Virtual Machine Name** Give a relevant identifier (e.g., `vm-ict171-portfolio`)
- * **Region** Select a recommended nearby region 
- * **Availability Zone** Leave as Default 
- * **VM Architecture**  Leave as Default (`x64`) 
- * **Image**  **Ubuntu Server 24.04 LTS - x64 Gen2** 
- * **Size**  **B1s** (1 vCPU, 1 GiB RAM) or **B2s** (Budget-friendly B-Series) for a static website portfolio you can choose from the b1 series, which has 1cpu and 1 gb of ram.
+ * **Subscription** : Choose Azure for Students 
+ * **Resource Group** :Create new $\rightarrow$ Name it appropriately (e.g., `rg-portfolio-project`) 
+ * **Virtual Machine Name** :Give a relevant identifier (e.g., `vm-ict171-portfolio`)
+ * **Region** :Select a recommended nearby region 
+ * **Availability Zone** :Leave as Default 
+ * **VM Architecture**  :Leave as Default (`x64`) 
+ * **Image**  :**Ubuntu Server 24.04 LTS - x64 Gen2** 
+ * **Size**  :**B1s** (1 vCPU, 1 GiB RAM) or **B2s** (Budget-friendly B-Series) for a static website portfolio you can choose from the b1 series, which has 1cpu and 1 gb of ram.
 
 > 💡 *Note: If B-Series sizes are unavailable, select "See all sizes" or switch the target region.*
 
@@ -88,7 +88,7 @@ This section details the step-by-step process of provisioning a cloud Virtual Ma
 
 ### Authentication Setup
 * **Authentication Type:** Select **SSH public key**.
-* **Key Pair Name:** Generate a new key pair.By default, Azure uses key files rather than a username and password to verify your identity when logging into your virtual machine. If you lose this file it is unlikely you will be able to mange your virtual machine so it is important to keep it safe.
+* **Key Pair Name:** Generate a new key pair, give a username and a name for the key.By default, Azure uses key files rather than a username and password to verify your identity when logging into your virtual machine. If you lose this file it is unlikely you will be able to mange your virtual machine so it is important to keep it safe.
 * **Notice:** *Download and save your `.pem` key file in a secure local location.*
 
 ### Inbound Firewall Rules (Network Security Group)
