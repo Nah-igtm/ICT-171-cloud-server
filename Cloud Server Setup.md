@@ -121,3 +121,53 @@ To edit your website files directly through your SSH session, you'll need to use
 ```bash
 nano /var/www/html/index.html
 ```
+
+### DNS 
+## Obtaining and linking a domain name
+Obtain a domain name from a Domain Name Registrar such as Porkbun, Namecheap, Godaddy). Avoid leaving your credit card details or auto-renew on your domain name if you do not plan to use this domain name after this unit. With some providers, this is not possible. If this is the case, remember to terminate your account at the end of the semester. Paying with Paypal might be an option.
+
+I personally recommend porkbun, After you have purchased your domain name, you want to link it to your cloud machine. You can do this by going to the website you purchased from and then go to "your products" or "purchased DNS" depends on the website your on but navigate to DNS, click on it or edit dns you will see the existing records, delete the existing record and click on add record choose Type: A - Address record ,Host: Leave this completely blank (Porkbun will automatically). Answer / Value: your server ip addres TTL: 600 (Default is fine) click add . again click add record.
+
+Type: CNAME - Canonical name record
+
+Host: www
+
+Answer / Value: mn-cybr.online
+
+TTL: 600
+
+Click Submit or Save.
+after that it should take 5 mins to update and then search your domain name on your browser, the website should show up
+
+## Domain Name & DNS Configuration
+
+This section covers registering a custom domain name and mapping DNS records to point traffic to the Azure Virtual Machine.Obtain a domain name from a Domain Name Registrar such as Porkbun, Namecheap, Godaddy. Avoid leaving your credit card details or auto-renew on your domain name if you do not plan to use this domain name after this unit. With some providers, this is not possible. If this is the case, remember to terminate your account at the end of the semester. Paying with Paypal might be an option.
+
+---
+
+### 1. Domain Registration
+* I personally recommend porkbun, After you have purchased your domain name, you want to link it to your cloud machine.
+* **Registrar:** Registered a custom domain via [Porkbun](https://porkbun.com/).
+
+---
+
+### 2. Linking Domain to Azure Cloud Server
+To route web traffic from `domain name` directly to the Azure static public IP.You can do this by going to the website you purchased from and then go to "your products" or "purchased DNS" depends on the website your on but navigate to DNS.
+
+#### Step-by-Step DNS Setup:
+1. Navigated to **Domain Management** $\rightarrow$ **DNS Records** on Porkbun.
+2. Removed pre-existing default parked records.
+3. Added the following custom DNS records:
+
+| Record Type | Host | Answer / Target Value | TTL | Purpose |
+| :--- | :--- | :--- | :--- | :--- |
+| **A Record** | *(blank / `@`)* | `20.248.209.74` | `600` | Maps root domain directly to the Azure server IP. |
+| **CNAME** | `www` | `mn-cybr.online` | `600` | Redirects `www` subdomain traffic to the root domain. |
+
+---
+
+### 3. DNS Propagation & Verification
+* Allowed approximately 5 minutes for global DNS propagation.
+* Verified resolution locally by running:
+  ```bash
+  nslookup mn-cybr.online
