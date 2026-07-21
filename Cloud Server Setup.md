@@ -117,7 +117,7 @@ Once deployment is complete, navigate to your Virtual Machine resource page to r
 1. Open the **Overview** blade of your VM and locate the **Public IP address**.
 2. Click **Connect** $\rightarrow$ **SSH client**.
 3. Open Command Prompt (Windows) or Terminal (macOS/Linux) on your local computer.
-4. Navigate to the folder containing your downloaded `.pem` key file and execute the SSH command:
+4. Navigate to the folder containing your downloaded `.pem` key file using cd and execute the SSH command:
 
 ```bash
 ssh -i "yourkeyname.pem" your_username@your_azure_vm_ip_address
