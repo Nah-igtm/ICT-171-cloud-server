@@ -64,7 +64,7 @@ ssh -i "yourkeyname.pem" your_username@your_azure_vm_ip_address
 ## 1. Navigating to Virtual Machine Creation
 1. Log into the [Microsoft Azure Portal](https://portal.azure.com/).
 2. In the top search bar, search for **Virtual machines** and select it under Services.
-3. Click **Create** $\rightarrow$ **Azure virtual machine**.
+3. Click **Create** $\rightarrow$ **virtual machine**.
 
 ---
 
@@ -78,7 +78,7 @@ ssh -i "yourkeyname.pem" your_username@your_azure_vm_ip_address
  * **Availability Zone** :Leave as Default 
  * **VM Architecture**  :Leave as Default (`x64`) 
  * **Image**  :**Ubuntu Server 24.04 LTS - x64 Gen2** 
- * **Size**  :Click see all sizes and choose depending on the budget relative to the computational power needed for you, **B1s** (1 vCPU, 1 GiB RAM) or **B2s** (Budget-friendly B-Series) for a static website portfolio you can choose from the b1 series, which is 1cpu and 1 gb of ram.
+ * **Size**  :Click see all sizes and choose depending on the budget relative to the computational power needed for you choose, b-series is highly recommended **B1s** (1 vCPU, 1 GiB RAM) or **B2s** (newer version of B-Series), for a static website portfolio you can choose from the b1 series, which is 1cpu and 1 gb of ram.
 
 > 💡 *Note: If B-Series sizes are unavailable, select "See all sizes" or switch the target region.*
 
@@ -105,7 +105,7 @@ Configure the Network Security Group (NSG) to allow standard administrative and 
 1. **Disks:** Maintain the default **30 GB OS disk** allocation.
 2. **Networking:** Keep default subnet and public IP settings.
 3. **Management, Monitoring, & Tags:** Skip optional tagging configurations.
-4. **Review + Create:** Validate settings and click **Create**.
+4. **Review + Create:** Validate settings and click **Create+create**.
 5. **Download Private Key:** Promptly save the generated `.pem` file to your local computer when prompted.
 
 ---
