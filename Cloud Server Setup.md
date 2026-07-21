@@ -122,9 +122,6 @@ To edit your website files directly through your SSH session, you'll need to use
 nano /var/www/html/index.html
 ```
 
-### DNS 
-## Obtaining and linking a domain name
-
 
 ## Domain Name & DNS Configuration
 
