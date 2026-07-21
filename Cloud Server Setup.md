@@ -57,7 +57,7 @@ open cmd or macos terminal paste the provided string
 ssh -i "yourkeyname.pem" your_username@your_azure_vm_ip_address
 
 
-This section details the step-by-step process of provisioning a cloud Virtual Machine (VM) using Microsoft Azure under the **Infrastructure as a Service (IaaS)** service model.
+**This section details the step-by-step process of provisioning a cloud Virtual Machine (VM) using Microsoft Azure under the **Infrastructure as a Service (IaaS)** service model.Start by creating a virtual machine , you are free to choose any cloud service provider but here we will be using microsoft azure. 
 
 ---
 
