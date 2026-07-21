@@ -117,7 +117,7 @@ Test by visiting your new webserver. You should be able to type the your cloud v
 
 ## To configure your website files directly 
 To edit your website files directly through your SSH session, you'll need to use a terminal-based text editor like Nano
-**Run this command in your SSH window to open the main webpage file:
+*Run this command in your SSH window to open the main webpage file:
 ```bash
 nano /var/www/html/index.html
 ```
