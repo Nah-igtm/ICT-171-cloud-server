@@ -178,7 +178,91 @@ Execute the following instruction on the command line on the machine to ensure t
 sudo ln -s /snap/bin/certbot /usr/local/bin/certbot
 ```
 
-#
+## Administrative Automation & Maintenance Script
+
+To maintain high availability, data redundancy, and automated log auditing, a custom Bash script (`backup_portfolio.sh`) was engineered and deployed to handle system web root backups and archive housekeeping.
+
+---
+
+### 1. Script Features & Logic
+* **Directory Archiving:** Compresses website assets from `/var/www/html/` into timestamped `.tar.gz` archives.
+* **Status Logging:** Appends timestamped operational status entries (`INFO`, `SUCCESS`, `ERROR`) to `/var/log/portfolio_backup.log`.
+* **Disk Management:** Automatically purges backup archives older than **7 days** to prevent disk storage exhaustion.
+* **Cron Integration:** Runs automatically every night at 2:00 AM via the system `cron` daemon.
+
+---
+
+### 2. Script Code (`/usr/local/bin/backup_portfolio.sh`)
+
+```bash
+#!/bin/bash
+
+# Configuration Parameters
+BACKUP_DIR="/var/backups/web_portfolio"
+SOURCE_DIR="/var/www/html"
+LOG_FILE="/var/log/portfolio_backup.log"
+TIMESTAMP=$(date +"%Y-%m-%d_%H%M%S")
+BACKUP_FILE="${BACKUP_DIR}/portfolio_backup_${TIMESTAMP}.tar.gz"
+
+# Ensure backup directory exists
+mkdir -p "$BACKUP_DIR"
+
+echo "${TIMESTAMP} - INFO: Backup process started." >> "$LOG_FILE"
+
+# Compress web root directory
+tar -czf "$BACKUP_FILE" "$SOURCE_DIR" 2>> "$LOG_FILE"
+
+if [ $? -eq 0 ]; then
+    echo "${TIMESTAMP} - SUCCESS: Backup created at ${BACKUP_FILE}" >> "$LOG_FILE"
+else
+    echo "${TIMESTAMP} - ERROR: Backup failed." >> "$LOG_FILE"
+fi
+
+# Storage Housekeeping: Delete archives older than 7 days
+echo "${TIMESTAMP} - INFO: Running storage housekeeping (removing backups older than 7 days)." >> "$LOG_FILE"
+find "$BACKUP_DIR" -type f -name "*.tar.gz" -mtime +7 -exec rm -f {} \;
+
+echo "${TIMESTAMP} - INFO: Backup execution complete." >> "$LOG_FILE"
+```
+
+---
+
+### 3. Execution Permissions & Cron Scheduling
+
+1. **Make Script Executable:**
+   ```bash
+   sudo chmod +x /usr/local/bin/backup_portfolio.sh
+   ```
+
+2. **Cron Automation Schedule (`sudo crontab -e`):**
+   ```text
+   0 2 * * * /usr/local/bin/backup_portfolio.sh > /dev/null 2>&1
+   ```
+
+---
+
+### 4. Verification & Audit Diagnostics
+
+To verify the script and automated cron scheduling output, run the following diagnostic commands:
+
+* **List Generated Backups:**
+  ```bash
+  ls -lh /var/backups/web_portfolio/
+  ```
+* **View Operational Logs:**
+  ```bash
+  cat /var/log/portfolio_backup.log
+  ```
+* **Verify Cron Job Schedule:**
+  ```bash
+  sudo crontab -l
+  ```
+
+---
+
+### 📷 Verified Execution Output
+![Backup Script Output Proof](images/backup-script-output.png)
+*Figure: Terminal output demonstrating successful manual and automated daily 2:00 AM execution logs.*
 Run this command to get a certificate and have Certbot edit your nginx configuration automatically to serve it, turning on HTTPS access in a single step.
 ```bash
 sudo certbot --nginx
