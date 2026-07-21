@@ -24,7 +24,7 @@ Public IP Address: 20.248.209.74
 
 Server Size: 1vcpu and 1gb Ram (cheap and suufiecient for static portfolio website)
 
-Domain Name: mn-cybr.online (Registered via Porkbun)
+Domain registrar and DNS: Porkbun (mn-cybr.online)
 
 Web Server: Nginx
 
