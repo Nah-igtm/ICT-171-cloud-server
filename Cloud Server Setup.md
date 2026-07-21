@@ -128,7 +128,7 @@ nano /var/www/html/index.html
 
 ## Domain Name & DNS Configuration
 
-This section covers registering a custom domain name and mapping DNS records to point traffic to the Azure Virtual Machine.Obtain a domain name from a Domain Name Registrar such as Porkbun, Namecheap, Godaddy. Avoid leaving your credit card details or auto-renew on your domain name if you do not plan to use this domain name after this unit. With some providers, this is not possible. If this is the case, remember to terminate your account at the end of the semester. Paying with Paypal might be an option.
+This section covers registering a custom domain name and mapping DNS records to point traffic to the Azure Virtual Machine.Obtain a domain name from a Domain Name Registrar such as Porkbun, Namecheap, Godaddy. Avoid leaving your credit card details or auto-renew on your domain name if you do not plan to use this domain name after this unit. With some providers, this is not possible. If this is the case, remember to terminate your account at the end of the trimester. Paying with Paypal might be an option.
 
 ---
 
